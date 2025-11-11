@@ -1,0 +1,96 @@
+.bar-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px; /* Space between bars */
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.bar {
+    width: 30px;
+    background-color: #0070f3;
+    position: relative;
+}
+
+/* .bar-label {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+} */
+
+.graphContainer
+{
+    background-color: white;
+    width: 1895px;
+/* 
+    position: relative;
+    top: 5px;
+
+    border-radius: 22.5px; */
+
+    text-align: center;
+}
+
+.random
+{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.canvasHeader
+{
+    background-color: white;
+
+    width: 1895px;
+    height: 100px;
+
+    border-radius: 22.5px;
+}
+
+.canvasHeadText
+{
+    width: 400px;
+
+    position: relative;
+    top: 22px;
+    left: 748px;
+    
+    text-align: center;
+}
+
+.canvasButton
+{
+    width: 100px;
+    height: 79px;
+
+    position: relative;
+    top: -45px;
+    left: 1784px;
+
+    border-radius: 22.5px;
+}
+
+
+.chart-container {
+    position: relative;
+    left: 538px;
+    width: 803px; /* Container width */
+    height: 650px; /* Adjust the height as needed */
+
+    border-radius: 22.5px;
+
+    background-color: white;
+
+    text-align: center;
+
+}
+
+.pie-chart {
+    max-width: 100%; /* Make sure it scales within the container */
+    max-height: 100%; /* Prevent it from exceeding container height */
+    display: block; /* Ensures it's a block element */
+    margin-top: auto; /* Center the canvas itself */
+}

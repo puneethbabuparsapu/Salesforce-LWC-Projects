@@ -1,0 +1,60 @@
+<template>
+    <template if:true={showanalysispage}>
+        <div class="canvasHeader">
+            <div class="canvasHeadText">
+                <h1 style="font-size: x-large;">Salesforce UpSkill Foundation</h1>
+                <h1>Learn, Grow and Excel in your Salesforce Journey</h1>
+            </div>
+
+            <button type="button" class="canvasButton" onclick={handleHomeButton}> Home </button>    
+        </div>
+        <br>
+        <div class="chart-container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 style="font-size: x-large;">Your Overall Performence across all online and mock tests</h1>
+            <br>
+            <br>
+            <canvas class="pie-chart"></canvas>
+        </div>
+        <br>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <template if:false={isLoading}>
+            <div class="graphContainer" style="border-radius: 22.5px;">
+                <br>
+                <h1 style="font-size: xx-large;">Your In - Detail Performence across all tests</h1>
+                <br>
+                <br>
+                <br>
+                <div class="random">
+                    <template for:each={outerKeysList} for:item="outerKey" for:index="index">
+                        <div key={outerKey}>
+                            <canvas data-id={index} style="width: 200px; height: 400px;"></canvas>
+                            
+                            <div class="inner-keys-container" data-id={outerKey} ></div>
+                            <br><br><br>
+                        </div>
+                    </template>
+                    
+                    <template if:true={error}>
+                        <div class="error">{error}</div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </template>
+
+    <template if:true={showhomepage}>
+        <c-salesforce-up-skill-foundation-home 
+        account-logged-in={accountLoggedIn} 
+        show-log-page={showlogpage}
+        show-home-page={showhomepage}
+        logged-account-id={loggedAccountId}>
+      </c-salesforce-up-skill-foundation-home>
+      </template>
+</template>
