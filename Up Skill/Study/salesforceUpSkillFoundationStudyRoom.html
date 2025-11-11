@@ -1,0 +1,89 @@
+<template>
+    <template if:true={showstudyroompage}>
+        <div class="canvasHeader">
+            <div class="canvasHeadText">
+                <h1 style="font-size: x-large;">Salesforce UpSkill Foundation</h1>
+                <h1>Learn, Grow and Excel in your Salesforce Journey</h1>
+            </div>
+    
+            <button type="button" class="canvasButton" onclick={handleHomeButton}> Home </button> 
+        </div>
+    
+        <div class="canvasMain">
+            <div class="testContainer">
+                <div class="one">
+                    <h1 class="apT">
+                        Study Materials for Salesforce Admin
+                    </h1>
+            
+                    <h3 class="tS">
+                        "Become a Salesforce admin expert with curated resources for efficient management."
+                    </h3>
+                    
+                    <lightning-button variant="brand" label="Download" onclick={downloadFile1} class="slds-m-around_medium" 
+                    
+                    style="position: relative;
+                    top: -60px;
+                    left: 648px;"></lightning-button>
+                </div>
+        
+                <div class="two">
+                    <h1 class="apT">
+                        Study Materials for Salesforce Apex
+                    </h1>
+            
+                    <h3 class="tS">
+                        "Unlock the power of Salesforce development with essential Apex learning."
+                    </h3>
+        
+                    <lightning-button variant="brand" label="Download" onclick={downloadFile2} class="slds-m-around_medium" 
+                    
+                    style="position: relative;
+                    top: -60px;
+                    left: 648px;"></lightning-button>
+                </div>
+        
+                <div class="three">
+                    <h1 class="apT">
+                        Study Materials for Salesforce LWC
+                    </h1>
+            
+                    <h3 class="tS">
+                        "Build dynamic web experiences with comprehensive Lightning Web Component guides."
+                    </h3>
+        
+                    <lightning-button variant="brand" label="Download" onclick={downloadFile3} class="slds-m-around_medium" 
+                    
+                    style="position: relative;
+                    top: -60px;
+                    left: 648px;"></lightning-button>
+                </div>
+        
+                <div class="four">
+                    <h1 class="apT">
+                        Study Materials for Salesforce CPQ
+                    </h1>
+            
+                    <h3 class="tS">
+                        "Master product configuration and pricing with in-depth CPQ resources."
+                    </h3>
+        
+                    <lightning-button variant="brand" label="Download" onclick={downloadFile4} class="   slds-m-around_medium" 
+                    
+                    style="position: relative;
+                    top: -60px;
+                    left: 648px;"></lightning-button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={showhomepage}>
+        <c-salesforce-up-skill-foundation-home 
+        account-logged-in={accountLoggedIn} 
+        show-study-room-page={showstudyroompage}
+        show-home-page={showhomepage}
+        logged-account-id={loggedAccountId}>
+      </c-salesforce-up-skill-foundation-home>
+      </template>
+</template>

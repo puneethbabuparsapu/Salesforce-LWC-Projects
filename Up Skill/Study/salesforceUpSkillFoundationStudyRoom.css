@@ -1,0 +1,122 @@
+.canvasHeader
+{
+    background-color: white;
+
+    width: 1895px;
+    height: 100px;
+
+    border-radius: 22.5px;
+}
+
+.canvasHeadText
+{
+    width: 400px;
+
+    position: relative;
+    top: 22px;
+    left: 748px;
+    
+    text-align: center;
+}
+
+.canvasButton
+{
+    width: 100px;
+    height: 79px;
+
+    position: relative;
+    top: -45px;
+    left: 1784px;
+
+    border-radius: 22.5px;
+}
+
+.testContainer
+{
+    width: 1050px;
+    height: 481px;
+
+    background-color: white;
+    border-radius: 22.5px;
+    /* border: 2px solid black; */
+
+    position: relative;
+    left: 423px;
+    top: 25px;
+}
+
+.one
+{
+    /* background-color: aqua; */
+    height: 95px;
+    width: 886px;
+
+    border-radius: 22.5px;
+    position: relative;
+    left: 82px;
+    top: 20px;
+}
+
+.two
+{
+    /* background-color: aqua; */
+    height: 95px;
+    width: 886px;
+
+    border-radius: 22.5px;
+    position: relative;
+    left: 82px;
+    top: 39px;
+}
+
+.three
+{
+    /* background-color: aqua; */
+    height: 95px;
+    width: 886px;
+
+    border-radius: 22.5px;
+    position: relative;
+    left: 82px;
+    top: 58px;
+}
+
+.four
+{
+    /* background-color: aqua; */
+    height: 95px;
+    width: 886px;
+
+    border-radius: 22.5px;
+    position: relative;
+    left: 82px;
+    top: 77px;
+}
+
+.apT
+{
+    font-size: x-large;
+
+    height: 40px;
+    width: 500px;
+
+    position: relative;
+    top: 5px;
+    left: 40px;
+
+    text-align: center;
+}
+
+.tS
+{
+    font-size: medium;
+
+    height: 40px;
+    width: 500px;
+
+    position: relative;
+    top: 10px;
+    left: 40px;
+
+    text-align: center;
+}
