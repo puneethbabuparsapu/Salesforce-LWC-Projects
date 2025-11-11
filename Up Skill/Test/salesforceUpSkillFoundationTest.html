@@ -1,0 +1,151 @@
+<template>
+    <template if:true={showingtestpage}>
+        <div class="canvasHeader">
+            <div class="canvasHeadText">
+                <h1 style="font-size: x-large;">Salesforce UpSkill Foundation</h1>
+                <h1>Learn, Grow and Excel in your Salesforce Journey</h1>
+            </div>
+    
+            <template if:true={on}>
+                <button type="button" class="canvasButton" onclick={handleLogInButton}> Home </button> 
+            </template>
+    
+            <div if:true={showtimer}>
+                <div class="canvasButton1" align="center">
+                    <h1>Time Limit: {minutes}:{seconds}</h1>
+                </div>
+            </div>
+    
+        </div>
+    
+        <template if:true={divContOne}>
+            <div class="selectionArea" style="display: flex; flex-direction: column; align-items: center;">
+            
+                <h1 style="font-size: x-large; position: relative; top: 40px;">Choose the test</h1>
+                
+                <lightning-combobox
+                    label="Select Type"
+                    value={selectedType}
+                    options={typeOptions}
+                    onchange={handleTypeChange}
+                    style="width: 500px;
+                    position: relative;
+                    top: 48px;">
+                </lightning-combobox>
+    
+                <template if:true={selectedType}>
+                    <lightning-combobox
+                        label="Select a Paper"
+                        value={selectedPaper}
+                        options={paperOptions}
+                        onchange={handlePaperChange}
+                        style="width: 500px;
+                        position: relative;
+                        top: 55px;">
+                    </lightning-combobox>
+    
+                    <lightning-button 
+                        label="Submit" 
+                        onclick={handleSubmit}
+                        style="position: relative;
+                        top: 75px;">
+                    </lightning-button>
+                </template>
+            </div>
+        </template>
+    
+        <template if:true={divContTwo}>
+
+            <div class="banner">
+                <h1 align="center">
+                    {selectedType} {selectedPaper}
+                </h1>
+            </div>
+            
+            <div class="canvasMain">
+                <template for:each={questions} for:item="question">
+                        <div key={question.id} class="question-block">
+                            <br>
+                            <p style="font-size: x-large; width: 1870px;">Question {question.number}: {question.name}</p>
+                            <br>
+                            <lightning-radio-group
+                                name={question.id}
+                                data-question-id={question.id} 
+                                value={question.selectedOption} 
+                                options={question.options}
+                                label="Select an option"
+                                onchange={handleOptionChange}
+    
+                                style="position: relative;
+                                width: 1870px;" 
+                            >
+                            </lightning-radio-group>
+                            <hr width="100%" size="2" >
+                            <br>
+                        </div>
+                    </template>
+    
+                <lightning-button label="Submit Answers" onclick={collectOptionsAndSubmit}></lightning-button>
+            </div>
+        </template>
+        
+        <template if:true={divContThree}>
+            <div class="banner">
+                <h1 align="center">
+                    {selectedType} {selectedPaper}
+                </h1>
+            </div>
+            <div class="stats-container">
+                <template if:true={error}>
+                    <div class="slds-text-color_error">Error fetching data: {error.body.message}</div>
+                </template>
+                <template if:false={error}>
+                    <div class="statsArea" align="center">
+                        <br>
+                        <p style="font-size: x-large;"><strong>Total Questions:</strong> {totalQuestions}</p>
+                        <p style="font-size: x-large;"><strong>Total Attempted:</strong> {totalAttempted}</p>
+                        <p style="font-size: x-large;"><strong>Total Unattempted:</strong> {totalUnattempted}</p>
+                        <p style="font-size: x-large;"><strong>Total Correct:</strong> {totalCorrect}</p>
+                        <p style="font-size: x-large;"><strong>Total Incorrect:</strong> {totalIncorrect}</p>
+                    </div>
+                </template>
+                <br>
+                <lightning-button label="Show Results" onclick={handleFetchResults}></lightning-button>
+                <br>
+            </div>
+        </template>
+    
+        <template if:true={showDetails}>
+            <div class="testArea1">
+                <template for:each={combinedQuestions} for:item="data">
+                <div key={data.question.id} class="question-block">
+                    <br>
+                    <p style="font-size: x-large;">Question {data.question.number}: {data.question.name}</p>
+                    <br>
+                    <ul>
+                        <template for:each={data.combinedOptions} for:item="optionLabel">
+                            <li key={optionLabel}>
+                                <p>{optionLabel}</p>
+                            </li>
+                        </template>
+                    </ul>
+                    <br>
+                    <p>Selected Option: <strong>{data.selectedOption}</strong></p>
+                    <p>Correct Option: <strong>{data.correctOption}</strong></p>
+                    <br>
+                    <hr width="100%" size="2" >
+                </div>
+            </template>
+            </div>
+        </template>
+    </template>
+    
+    <template if:true={showhomepage}>
+        <c-salesforce-up-skill-foundation-home 
+        account-logged-in={accountLoggedIn} 
+        showing-test-page={showingtestpage}
+        show-home-page={showhomepage}
+        logged-account-id={loggedAccountId}>
+      </c-salesforce-up-skill-foundation-home>
+      </template>
+</template>
